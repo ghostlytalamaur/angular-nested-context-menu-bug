@@ -1,0 +1,30 @@
+<!-- #docregion triggers -->
+<div class="example-context-area" [cdkContextMenuTriggerFor]="outer" [cdkContextMenuPosition]="menuPosition">
+  Outer context menu
+  <div class="example-context-area" [cdkContextMenuTriggerFor]="inner">
+    Inner context menu
+  </div>
+</div>
+<!-- #enddocregion triggers -->
+
+<ng-template #outer>
+  <div class="example-menu" cdkMenu>
+    <button class="example-menu-item" cdkMenuItem [cdkMenuTriggerFor]="inner">
+      Nested
+    </button>
+    <button class="example-menu-item" cdkMenuItem>Save</button>
+    <button class="example-menu-item" cdkMenuItem>Exit</button>
+  </div>
+</ng-template>
+
+<ng-template #inner>
+  <div class="example-menu" cdkMenu>
+    <button class="example-menu-item" cdkMenuItem>Cut</button>
+    <button class="example-menu-item" cdkMenuItem>Copy</button>
+    <button class="example-menu-item" cdkMenuItem>Paste</button>
+  </div>
+</ng-template>
+
+<!-- Copyright 2023 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at https://angular.io/license -->
